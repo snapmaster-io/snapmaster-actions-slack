@@ -1,0 +1,18 @@
+{
+  "name": "snapmaster-slack-actions",
+  "version": "0.0.1",
+  "description": "SnapMaster Slack actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Omri Gazitt <ogazitt@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "snapmaster-actions": "^0.1.5"
+  }
+}
