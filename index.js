@@ -1,30 +1,23 @@
-const express = require('express');
+// SnapMaster Actions
+
+// import the snapmaster actions middleware 
+const snapmaster = require('snapmaster-actions');
+
+// import the action functions
 const actions = require('./actions');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const { snapmaster } = require('snapmaster-actions');
 
-const app = express();
-
-// enable CORS
-app.use(cors());
-
-// enable request body parsing middleware
-app.use(bodyParser.json({ limit: '10mb' }));
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-
-// use the snapmaster middleware for all requests
-app.use(snapmaster);
-
-app.use('/send', actions.send);
-
-app.use('/hello', (req, res) => { res.status(200).send('hello'); });
-exports.actions = app;
-
-const PORT = 5555;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// set up the express middleware for the actions
+exports.snapmaster = snapmaster({
+  send: actions.send,
 });
+
+
+// OPTIONAL - the below code adds a development server 
+// Start it by running "npm run dev"
+if (process.env.ENV === 'dev') {
+// start a server for local testing
+  const PORT = 5555;
+  exports.snapmaster.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
