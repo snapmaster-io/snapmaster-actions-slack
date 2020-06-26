@@ -1,5 +1,5 @@
 {
-  "name": "snapmaster-slack-actions",
+  "name": "snapmaster-actions-slack",
   "version": "0.0.1",
   "description": "SnapMaster Actions for Slack",
   "main": "index.js",
