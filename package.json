@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "snapmaster-actions": "^0.1.12"
+    "snapmaster-actions": "^0.1.14"
   }
 }
