@@ -18,12 +18,14 @@ const invokeAction = async (action, param) => {
     const message = param.message;
     const token = param.token;
 
+    if (!token) {
+      const error = 'slack/send: missing token in request body';
+      console.error(error);
+      return { status: 'error', message: error };
+    }
+
     console.log(`${providerName}: workspace ${workspace}, action ${action}, channel ${channel}, message ${message}`);
 
-    if (!action || !workspace || !channel || !message) {
-      console.error('invokeAction: missing required parameter');
-      return null;
-    }
 
     const url = `https://slack.com/api/${action}`;
     const headers = { 
