@@ -1,19 +1,8 @@
 ---
-version: provider-v1alpha1 
+version: actions-v1alpha1 
 name: slack
-description: Slack Provider Definition
-connection: 
-  type: oauth
-  infoUrl: https://api.slack.com/legacy/custom-integrations/legacy-tokens
-  infoText: Click here to create a legacy access token
-  entity: slack:workspaces
-  connectionInfo:
-  - name: workspace
-    description: workspace name ({workspace}.slack.com)
-  - name: token
-    description: personal access token
-    type: password
-triggers: 
+description: Slack Actions
+provider: slack
 actions:
   - name: send
     description: send a message to a channel 
