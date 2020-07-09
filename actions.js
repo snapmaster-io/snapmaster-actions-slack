@@ -16,7 +16,7 @@ const invokeAction = async (action, param) => {
     const workspace = param.workspace;
     const channel = param.channel;
     const message = param.message;
-    const token = param.token;
+    const token = param.connectionInfo.access_token;
 
     if (!token) {
       const error = 'slack/send: missing token in request body';
