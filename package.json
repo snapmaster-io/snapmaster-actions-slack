@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/snapmaster-io/snapmaster-actions-slack#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "snapmaster-actions": "^0.1.20"
   }
 }
